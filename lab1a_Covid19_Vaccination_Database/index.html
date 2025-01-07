@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1"/>
+	<title>First Form in Node JS</title>
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css"/>
+	<!--<link rel="stylesheet" href="/css/theme-classic.css"/> -->
+	<link rel="stylesheet" href="css/Covid19.css"/>
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+	<script src="js/jquery-2.1.1.js"></script> 
+	<script src="js/jquery.mobile-1.4.5.min.js"></script>
+	<script src="js/Covid19.js"></script>
+</head>
+
+<body>
+
+<!-- Start of first page: #one -->
+<div data-role="page" id="home" >
+
+	<div data-role="header">
+		<h1>COVID19 Vaccination Database - Entry Form</h1>
+		<a href="#showRecords" id="showRecords" onclick="readFromFile()" class="ui-btn ui-btn-right ui-corner-all ui-shadow ui-btn-icon-left ui-icon-action">View Records</a>
+	</div><!-- /header -->
+	
+	<div role="main" class="ui-content">
+		<p>Enter your information the fields below.</p>
+	<form onsubmit="submitForm(event)" class="ui-field-contain">
+		<div id="ui-bar-form" class="ui-bar ui-bar-a">
+			<div class="ui-field-contain">
+				<label for="textinput-1">Type Firstname:</label>
+				<input type="text" name="FirstnameTxt" id="FirstnameTxt" placeholder="Your first name" required/>
+			</div>
+			
+			<div class="ui-field-contain">
+				<label for="textinput-2">Type Surname:</label>
+				<input type="text" name="SurnameTxt" id="SurnameTxt" placeholder="Your surname" required/>
+			</div>
+
+			<div class="ui-field-contain">
+				<label for="AgeSlider">Age:</label>
+				<input type="range" name="AgeSlider" id="AgeSlider" min="0" max="120" data-highlight="true" required/>
+			</div>
+			
+			<div class="ui-field-contain">
+				<label for="PoVaccinationLbl">Place of Vaccination</label>
+				<input type="text" name="PoVaccinationTxt" id="PoVaccinationTxt" data-clear-btn="true" required/>
+			</div>
+		
+			<div class="ui-field-contain">
+				<label for="select-choice-1" class="select">Type of Vaccine:</label>
+				<select name="selectchoice1" id="selectchoice1" data-native-menu="false" required>
+					<option value="Johnson & Johnson's Janssen">Johnson & Johnson's Janssen</option>
+					<option value="AstraZeneca">AstraZeneca</option>
+				</select>
+			</div>
+							
+			<div class="ui-field-contain">
+				<label for="select-choice-2" class="select">Name of Vaccine Manufacturer:</label>
+				<select name="selectchoice2" id="selectchoice2" data-native-menu="false" required>
+					<option value="SI of India AZ">SI of India AZ</option>
+					<option value="SI of Europe AZ">SI of Europe AZ</option>
+					<option value="SI of US AZ">SI of US AZ</option>
+					<option value="J&J of US">J&J of US</option>
+					<option value="J&J of India">J&J of India</option>
+				</select>
+			</div>
+			
+			<div class="ui-field-contain" >
+				<label for="PoVaccinationLbl">Date of Dose 1</label>
+				<input type="date" name="dateofDose1" id="dateofDose1" data-role="date" value="01-01-2022" required/>
+			</div>		
+			
+		
+			<div class="ui-field-contain">
+				<label for="PoVaccinationLbl">Date of Dose 2</label>
+				<input type="date" name="dateofDose2" id="dateofDose2" data-role="date" value="01-01-2022" required/>
+			</div>
+			
+			<div class="ui-field-contain">
+				<label for="select-choice-3" class="select">Healthcare Professional ID:</label>
+				<select name="selectchoice3" id="selectchoice3" data-native-menu="false" required>
+					<option value="1111">1111</option>
+					<option value="2222">2222</option>
+				</select>
+			</div>
+			
+			<div class="ui-field-contain">
+				<label for="select-choice-4" class="select">Healthcare Professional Fullname:</label>
+				<select name="selectchoice4" id="selectchoice4" data-native-menu="false" required>
+					<option value="John Red">John Red</option>
+					<option value="Mary Green">Mary Green</option>
+				</select>
+			</div>
+			
+			<div class="ui-body ui-body-b" align="right">
+			<fieldset class="ui-grid-a">
+				<div class="ui-block-a"><button type="reset" data-theme="d">Reset</button></div>
+				<div class="ui-block-b"><button type="submit"data-theme="a">Submit</button></div>
+			</fieldset>
+			</div>
+		</div>
+	</form>	
+			
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>JSemos 2022</h4>
+	</div><!-- /footer -->
+
+</div><!-- /page -->
+
+<!-- Start of second page: #two -->
+<div data-role="page" id="showRecords">
+
+	<div data-role="header">
+		<h1>COVID19 Vaccination Database - Records from file</h1>
+		<a href="#home" id="home" class="ui-btn ui-btn-right ui-corner-all ui-shadow ui-btn-icon-left ui-icon-home">Return to Entry Form</a>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content" ">
+		<p><strong>Firstname, Lastname, Age, Type of Vaccine, Name of Vaccine Manufacturer, Date of Dose 1, Date of Dose 2, Healthcare Professional ID, Healthcare Professional Fullname, Geolocation</strong></p>
+		<div class ="ui-content">
+			<div id="fileContents" style="white-space: pre-wrap; margin-top: 20px; background-color: #f0f0f0; padding: 10px; border: 1px solid #ccc;"></div>
+		</div>
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>JSemos 2022</h4>
+	</div><!-- /footer -->
+</div><!-- /page two -->
+
+</body>
+</html>
