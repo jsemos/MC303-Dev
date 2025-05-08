@@ -42,4 +42,4 @@ Here are some resources to help you with the assessment:
 
 Contact Information
 If you have any questions or need further assistance, feel free to reach out to me:
-Jerome Semos - jksemos@dwu.ac.pg
+- jksemos@dwu.ac.pg
